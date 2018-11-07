@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/latest/latest"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor":"#f7f7f7",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "v2ex",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "热门"
+      },
+      {
+        "pagePath": "pages/latest/latest",
+        "text": "最新"
+      }
+    ],
+    "position": "bottom"
+  }
+}

@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:for="{{hotData}}" class='item'>
+    {{item.title}}
+  </view>
+</view>

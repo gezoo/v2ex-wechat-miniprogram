@@ -1,0 +1,13 @@
+/**index.wxss**/
+
+.container {
+  flex-direction: column;
+  background: #f7f7f7;
+}
+
+.item {
+  height: 80px;
+  width: 100%;
+  margin-bottom: 10px;
+  background: #fff;
+}
