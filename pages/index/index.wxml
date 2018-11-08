@@ -1,6 +1,19 @@
 <!--index.wxml-->
 <view class="container">
   <view wx:for="{{hotData}}" class='item'>
-    {{item.title}}
+    <view class='member'>
+      <image class='member-avatar' src='{{item.member.avatar_normal}}'></image>
+      <view>
+        <view class='member-name'>{{item.member.username}}</view>
+        <view class='member-last_reply_by'>最后回复 {{item.last_reply_by}}</view>
+      </view>
+    </view>
+    <view class='content'>
+      {{item.title}}
+    </view>
+    <view class='node'>
+      <view class='node-title'>{{item.node.title}}</view>
+      <view class='replies'>{{item.replies}}</view>
+    </view>
   </view>
 </view>
