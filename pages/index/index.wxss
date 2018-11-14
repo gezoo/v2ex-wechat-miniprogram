@@ -58,3 +58,7 @@
   color:#747474;
   font-size: 24rpx;
 }
+
+.item-hover{
+  background: #e9e9e9;
+}

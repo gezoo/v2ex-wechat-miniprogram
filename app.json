@@ -9,7 +9,8 @@
     "backgroundColor":"#f7f7f7",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "v2ex",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "list": [

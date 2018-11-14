@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view wx:for="{{hotData}}" class='item'>
+  <view wx:for="{{hotData}}" class='item' hover-class='item-hover'>
     <view class='member'>
       <image class='member-avatar' src='{{item.member.avatar_normal}}'></image>
       <view>

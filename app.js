@@ -2,7 +2,7 @@
 const config = require('./config')
 
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -12,6 +12,11 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      }
+    })
+    wx.getWeRunData({
+      success: res => {
+        console.log(res);
       }
     })
     // 获取用户信息
