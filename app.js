@@ -1,5 +1,6 @@
 //app.js
 const config = require('./config')
+const util = require('./utils/util.js')
 
 App({
   onLaunch: function() {
@@ -43,5 +44,6 @@ App({
   globalData: {
     userInfo: null
   },
-  config: config
+  config: config,
+  util: util
 })

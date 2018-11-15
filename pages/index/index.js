@@ -29,7 +29,7 @@ Page({
     wx.request({
       url: app.config.hotUrl,
       success(res) {
-        console.log(res);
+        console.log(res.data)
         that.setData({
           hotData: res.data
         })
@@ -38,5 +38,8 @@ Page({
         if (callback) callback();
       }
     })
+  },
+  onClickItem(item){
+
   }
 })

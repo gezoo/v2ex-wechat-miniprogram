@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "最新",
+  "usingComponents": {
+    "node": "/components/node/node"
+  }
+}

@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "热门"
+  "navigationBarTitleText": "热门",
+  "usingComponents":{
+    "node":"/components/node/node"
+  }
 }

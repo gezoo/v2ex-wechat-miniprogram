@@ -1,3 +1,5 @@
+const miment = require('../miniprogram_npm/miment/index.js')
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -14,6 +16,13 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const formatLastTouched = timestamp =>{
+  const diffDate = miment().distance(timestamp);
+  return diffDate.format('YYYY年MM月DD日 hh时mm分ss秒')
+  
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  formatLastTouched: formatLastTouched
 }
