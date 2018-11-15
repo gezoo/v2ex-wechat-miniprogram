@@ -2,35 +2,34 @@
 const util = require('../../utils/util.js')
 
 Component({
+  relations:{
+    './node-tag':{
+      type:'descendant'
+    }
+  },
   /**
    * 组件的属性列表
    */
   properties: {
-    data:{
-      type:Object
+    source: {
+      type: Object
     },
-    nextUrl:{
-      type:String
-    }
   },
-  created(){
-  },
-  ready(){
-    const date = util.formatLastTouched(this.data.data.last_touched)
-    this.setData({
-      'data.last_touched': date
-    })
+  created() {},
+  ready() {
   },
   /**
    * 组件的初始数据
    */
-  data: {
-  },
+  data: {},
 
   /**
    * 组件的方法列表
    */
   methods: {
+    onTap(){
+      this.triggerEvent('click',this.data.source)
+    }
   },
 
 })

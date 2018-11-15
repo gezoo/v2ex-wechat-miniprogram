@@ -1,4 +1,4 @@
 <!--pages/latest/latest.wxml-->
 <view class="container">
-  <node wx:for="{{latestData}}" data="{{item}}" wx:key="{{item.id}}"></node>
+  <node wx:for="{{latestData}}" source="{{item}}" wx:key="{{item.id}}"></node>
 </view>

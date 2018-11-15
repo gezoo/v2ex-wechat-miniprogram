@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <view class="container">
-  <node wx:for="{{hotData}}" data="{{item}}" wx:key="{{item.id}}"></node>
+  <node wx:for="{{hotData}}" source="{{item}}" wx:key="{{item.id}}" bind:click="onTap"></node>
 </view>

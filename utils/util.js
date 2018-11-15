@@ -17,9 +17,20 @@ const formatNumber = n => {
 }
 
 const formatLastTouched = timestamp =>{
-  const diffDate = miment().distance(timestamp);
-  return diffDate.format('YYYY年MM月DD日 hh时mm分ss秒')
-  
+  const diff =Math.round( miment().stamp() / 1000 - timestamp)
+  var timeSpanStr = ''
+  if(diff < 60){
+    timeSpanStr = '刚刚'
+  }else if(diff >60 && diff < 60 * 60 ){
+    timeSpanStr = `${Math.round(diff / 60)}分钟前`
+  }else if(diff > 60 * 60 && diff < 60 * 60 * 24){
+    timeSpanStr = `${Math.round(diff / 60 / 60 )}小时前`
+  }else if(diff > 60 * 60 * 24 && diff < 60 * 60 * 24 * 15){
+    timeSpanStr = `${Math.round(diff / 60 / 60 / 24)}天前`
+  }else{
+    timeSpanStr = miment(timestamp).format('YYYY年MM月DD日')
+  }
+  return timeSpanStr  
 }
 
 module.exports = {

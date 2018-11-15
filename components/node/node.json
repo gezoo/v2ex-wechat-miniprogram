@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "node-tag":"../node-tag/node-tag",
+    "member":"../member/member"
+  }
 }

@@ -2,25 +2,31 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/latest/latest"
+    "pages/latest/latest",
+    "pages/topics/topics"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "backgroundColor":"#f7f7f7",
+    "backgroundColor": "#f7f7f7",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "v2ex",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
   "tabBar": {
+    "selectedColor": "#000",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "热门"
+        "text": "热门",
+        "iconPath": "resources/images/hot.png",
+        "selectedIconPath": "resources/images/hot_selected.png"
       },
       {
         "pagePath": "pages/latest/latest",
-        "text": "最新"
+        "text": "最新",
+        "iconPath": "resources/images/all.png",
+        "selectedIconPath": "resources/images/all_selected.png"
       }
     ],
     "position": "bottom"

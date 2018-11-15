@@ -1,18 +1,13 @@
 <!--components/node/node.wxml-->
-<view class='item' hover-class='item-hover'>
-  <view class='member' >
-    <image class='member-avatar' src='{{data.member.avatar_normal}}'></image>
-    <view>
-      <view class='member-name'>{{data.member.username}}</view>
-      <view class='member-last_reply_by'>最后回复 {{data.last_reply_by}} · {{data.last_touched}}</view>
-    </view>
-  </view>
+<!-- <wxs module="format" src="../../utils/formatter.wxs"></wxs> -->
+<view class='item' hover-class='item-hover' bindtap='onTap'>
+  <member source="{{source}}"></member>
   <view class='content'>
-    {{data.title}}
+    {{source.title}}
   </view>
   <view class='node'>
-    <view class='node-title'>{{data.node.title}}</view>
-    <view class='replies'>{{data.replies}}</view>
+    <node-tag>{{source.node.title}}</node-tag>
+    <view class='replies'><image class='replies-image' src='../../resources/images/message.png'></image><view>{{source.replies}}</view></view>
   </view>
 
 </view>

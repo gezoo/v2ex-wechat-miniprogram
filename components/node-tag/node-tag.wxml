@@ -1,0 +1,2 @@
+<!--components/node-tag/node-tag.wxml-->
+<view class='node-title'><slot></slot></view>

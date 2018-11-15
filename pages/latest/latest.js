@@ -1,6 +1,7 @@
 // pages/latest/latest.js
 
 const app = getApp();
+
 Page({
 
   /**
@@ -15,8 +16,11 @@ Page({
    */
   onLoad: function(options) {
     wx.showNavigationBarLoading();
+    wx.showLoading({
+      title: '',
+    })
     this.getData(() => {
-      wx.hideNavigationBarLoading()
+      
     });
   },
 
@@ -32,6 +36,8 @@ Page({
    */
   onShow: function() {
     console.log("onShow")
+    wx.hideNavigationBarLoading()
+    wx.hideLoading()
   },
 
   /**

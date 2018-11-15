@@ -1,0 +1,5 @@
+<!--pages/topics/topics.wxml-->
+<view class=''>
+  <member source="{{topicData}}"></member>
+  <view> {{topicData.title}}</view>
+</view>

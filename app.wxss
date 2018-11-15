@@ -7,3 +7,7 @@
   justify-content: space-between;
   box-sizing: border-box;
 } 
+
+view {
+  font-size: 30rpx;
+}

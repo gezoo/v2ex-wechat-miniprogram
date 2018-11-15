@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "帖子详情",
+  "enablePullDownRefresh":false,
+    "usingComponents": {
+      "member": "/components/member/member"
+    }
+}
