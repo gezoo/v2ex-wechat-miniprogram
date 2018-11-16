@@ -1,5 +1,13 @@
 <!--pages/topics/topics.wxml-->
-<view class=''>
-  <member source="{{topicData}}"></member>
-  <view> {{topicData.title}}</view>
+<wxs module="format" src="../../utils/formatter.wxs"></wxs>
+<view class='container'>
+  <member source="{{topicData.member}}">
+    at {{format.formatLastTouched(topicData.last_modified)}}
+  </member>
+  <view class='title'>{{topicData.title}}</view>
+  <view class='content'>
+    <import src="../../utils/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:topicContent.nodes}}"></template>
+  </view>
+  <view class='content-footer'> {{topicData.replies}}回复 · 直到{{now}}</view>
 </view>

@@ -40,9 +40,6 @@ Page({
     })
   },
   onTap(event){
-    console.log(event.detail)
-    wx.navigateTo({
-      url: `../../pages/topics/topics?id=${event.detail.id}&title=${event.detail.title}`
-    })
+
   }
 })

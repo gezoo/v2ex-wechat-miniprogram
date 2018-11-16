@@ -9,5 +9,5 @@
 } 
 
 view {
-  font-size: 30rpx;
+  /* font-size: 30rpx; */
 }

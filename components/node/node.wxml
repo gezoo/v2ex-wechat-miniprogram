@@ -1,13 +1,18 @@
 <!--components/node/node.wxml-->
-<!-- <wxs module="format" src="../../utils/formatter.wxs"></wxs> -->
-<view class='item' hover-class='item-hover' bindtap='onTap'>
-  <member source="{{source}}"></member>
+<wxs module="format" src="../../utils/formatter.wxs"></wxs>
+<view class='item' bindtap='onTap' hover-class='item-hover'>
+  <member source="{{source.member}}">
+   最后回复 {{source.last_reply_by}} · {{format.formatLastTouched(source.last_touched)}}
+  </member>
   <view class='content'>
     {{source.title}}
   </view>
   <view class='node'>
     <node-tag>{{source.node.title}}</node-tag>
-    <view class='replies'><image class='replies-image' src='../../resources/images/message.png'></image><view>{{source.replies}}</view></view>
+    <view class='replies'>
+      <image class='replies-image' src='../../resources/images/message.svg'></image>
+      <view>{{source.replies}}</view>
+    </view>
   </view>
 
 </view>

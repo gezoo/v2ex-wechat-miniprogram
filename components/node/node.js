@@ -2,9 +2,9 @@
 const util = require('../../utils/util.js')
 
 Component({
-  relations:{
-    './node-tag':{
-      type:'descendant'
+  relations: {
+    './node-tag': {
+      type: 'descendant'
     }
   },
   /**
@@ -16,8 +16,7 @@ Component({
     },
   },
   created() {},
-  ready() {
-  },
+  ready() {},
   /**
    * 组件的初始数据
    */
@@ -27,8 +26,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onTap(){
-      this.triggerEvent('click',this.data.source)
+    onTap() {
+      wx.navigateTo({
+        url: `../../pages/topics/topics?id=${this.data.source.id}`
+      })
+      this.triggerEvent('click', this.data.source)
     }
   },
 

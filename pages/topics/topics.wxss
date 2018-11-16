@@ -1,2 +1,28 @@
 /* pages/topics/topics.wxss */
+@import "../../utils/wxParse/wxParse.wxss";
 
+.container {
+  padding: 25rpx;
+}
+
+member, .title, .content-footer {
+  width: 100%;
+}
+
+.title {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid rgba(192, 192, 192, 0.692);
+  font-size: 34rpx;
+}
+
+.content {
+  margin: 20rpx 0;
+  font-size: 28rpx;
+}
+
+.content-footer {
+  font-size: 24rpx;
+  text-align: left;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid rgba(192, 192, 192, 0.692);
+}

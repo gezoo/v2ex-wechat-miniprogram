@@ -12,7 +12,7 @@ Component({
   properties: {
     source:{
       type:Object,
-    }
+    },
   },
 
   /**

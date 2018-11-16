@@ -1,0 +1,11 @@
+<!--components/replies/replies.wxml-->
+<wxs module="format" src="../../utils/formatter.wxs"></wxs>
+<view>
+  <member source="{{source.member}}">
+    {{format.formatLastTouched(source.last_modified)}}
+  </member>
+  <view>
+    <import src="../../utils/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:repliesContent.nodes}}"></template>
+  </view>
+</view>

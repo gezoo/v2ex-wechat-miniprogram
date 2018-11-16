@@ -1,4 +1,3 @@
-
 var formatLastTouched = function(timestamp) {
   var stamp = Math.round(getDate() / 1000 - timestamp);
   var timeSpanStr = '';
@@ -11,11 +10,23 @@ var formatLastTouched = function(timestamp) {
   } else if (stamp > 60 * 60 * 24 && stamp < 60 * 60 * 24 * 15) {
     timeSpanStr = Math.round(stamp / 60 / 60 / 24) + '天前';
   } else {
-    timeSpanStr = getDate(timestamp * 1000).toDateString('YYYY年MM月DD日')
+    timeSpanStr = getDate(timestamp * 1000).toLocaleDateString()
   }
   return timeSpanStr;
 }
 
+var timestampToLocalString =function(timestamp){
+  var date = getDate(timestamp);
+  return date.toLocaleDateString();
+}
+
+var now = function(){
+  var date = getDate();
+  return date;
+}
+
 module.exports = {
-  formatLastTouched: formatLastTouched
+  formatLastTouched: formatLastTouched,
+  timestampToLocalString: timestampToLocalString,
+  now:now,
 }

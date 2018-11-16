@@ -9,4 +9,5 @@ node {
   height: 100%;
   width: 100%;
   margin-bottom: 8px;
+  background: #fff;
 }

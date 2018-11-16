@@ -1,9 +1,10 @@
 <!--components/member/member.wxml-->
-<wxs module="format" src="../../utils/formatter.wxs"></wxs>
 <view class='member'>
-  <image class='member-avatar' src='{{source.member.avatar_normal}}'></image>
-  <view>
-    <view class='member-name'>{{source.member.username}}</view>
-    <view class='member-last_reply_by'>最后回复 {{source.last_reply_by}} · {{format.formatLastTouched(source.last_touched)}}</view>
+  <image class='member-avatar' src='{{source.avatar_normal}}'></image>
+  <view class='member-username'>
+    <view class='member-name'>{{source.username}}</view>
+    <view class='member-last_reply_by'>
+      <slot></slot>
+    </view>
   </view>
 </view>
