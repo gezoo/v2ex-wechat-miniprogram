@@ -8,6 +8,9 @@ Page({
   },
 
   onLoad: function() {
+
+  },
+  onShow: function() {
     this.getHotData();
   },
   onPullDownRefresh() {
@@ -17,29 +20,22 @@ Page({
       wx.hideNavigationBarLoading();
     });
   },
-  onReachBottom(){
-    wx.showLoading({
-      title: '玩命加载中',
-    });
-    
-    wx.hideLoading();
-  },
+  onReachBottom() {},
   getHotData(callback) {
     var that = this;
     wx.request({
       url: app.config.hotUrl,
       success(res) {
-        console.log(res.data)
         that.setData({
           hotData: res.data
         })
       },
-      complete(){
+      complete() {
         if (callback) callback();
       }
     })
   },
-  onTap(event){
+  onTap(event) {
 
   }
 })

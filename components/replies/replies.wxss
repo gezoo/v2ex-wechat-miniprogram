@@ -1,1 +1,11 @@
 /* components/replies/replies.wxss */
+@import "../../utils/wxParse/wxParse.wxss";
+
+.replies {
+  padding: 20rpx 0;
+  border-top: 1rpx solid rgba(192, 192, 192, 0.692);
+}
+
+.replies-content {
+  padding-top: 20rpx;
+}

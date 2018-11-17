@@ -5,7 +5,7 @@
   padding: 25rpx;
 }
 
-member, .title, .content-footer {
+member, .title, .content-footer, .topics-replies {
   width: 100%;
 }
 
@@ -21,8 +21,14 @@ member, .title, .content-footer {
 }
 
 .content-footer {
-  font-size: 24rpx;
+  font-size: 22rpx;
   text-align: left;
   padding-bottom: 20rpx;
-  border-bottom: 1rpx solid rgba(192, 192, 192, 0.692);
+  padding-top: 20rpx;
 }
+
+
+.topics-replies{
+  font-size: 28rpx;
+}
+

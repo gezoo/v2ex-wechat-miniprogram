@@ -1,10 +1,10 @@
 <!--components/replies/replies.wxml-->
 <wxs module="format" src="../../utils/formatter.wxs"></wxs>
-<view>
+<view class='replies'>
   <member source="{{source.member}}">
-    {{format.formatLastTouched(source.last_modified)}}
+    {{index+1}}楼 {{format.formatLastTouched(source.last_modified)}}
   </member>
-  <view>
+  <view class='replies-content'>
     <import src="../../utils/wxParse/wxParse.wxml" />
     <template is="wxParse" data="{{wxParseData:repliesContent.nodes}}"></template>
   </view>

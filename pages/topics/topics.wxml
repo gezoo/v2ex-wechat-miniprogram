@@ -5,9 +5,12 @@
     at {{format.formatLastTouched(topicData.last_modified)}}
   </member>
   <view class='title'>{{topicData.title}}</view>
-  <view class='content'>
+  <view class='{{topicData.content?"content":""}}'>
     <import src="../../utils/wxParse/wxParse.wxml" />
     <template is="wxParse" data="{{wxParseData:topicContent.nodes}}"></template>
   </view>
-  <view class='content-footer'> {{topicData.replies}}回复 · 直到{{now}}</view>
+  <view class='content-footer'>{{topicData.replies}} 回复 · 直到 {{now}}</view>
+  <view class='topics-replies'>
+    <replies wx:for="{{repliesData}}" wx:for-index="idx" source="{{item}}" index="{{idx}}"></replies>
+  </view>
 </view>

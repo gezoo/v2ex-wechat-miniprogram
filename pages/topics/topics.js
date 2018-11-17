@@ -9,9 +9,8 @@ Page({
    */
   data: {
     topicData: {},
-    // topicContent: '',
-    repliesData:[],
-    now:'',
+    repliesData: [],
+    now: '',
     pageSize: 10,
     pageIndex: 1
   },
@@ -23,7 +22,7 @@ Page({
     this.getData(options.id)
     this.getRepliesData(options.id)
     this.setData({
-      now: app.util.formatTime(new Date()) 
+      now: app.util.formatTime(new Date())
     })
   },
 
@@ -31,14 +30,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    //wx.hideLoading()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
   },
 
   /**
@@ -81,29 +79,32 @@ Page({
     wx.request({
       url: app.config.topicUrl + id,
       success(res) {
-        // console.log(res.data)
-        wxParse.wxParse('topicContent', 'html', res.data[0].content_rendered, that, 10)
+        const node = res.data[0];
+        if(node.content_rendered){
+          wxParse.wxParse('topicContent', 'html', node.content_rendered, that, 10)
+        }
         that.setData({
-          topicData: res.data[0],
-          // topicContent: wxParse.wxParse('topicContent', 'html', res.data[0].content_rendered, that, 10)
+          topicData: node,
         })
-        
       },
       complete() {
         if (callback) callback()
       }
     })
   },
-  getRepliesData(topicId, callback){
+  getRepliesData(topicId, callback) {
     const that = this;
     wx.request({
-      url: app.config.repliesUrl + `${topicId}&&page=${that.pageIndex}&page_size=${that.pageSize}`,
-      success(res){
+      url: app.config.repliesUrl + `${topicId}&&page=${1}&page_size=${10}`,
+      success(res) {
         console.log(res.data)
         that.setData({
           repliesData: res.data
         })
       }
     })
+  },
+  wxParseTagATap(event) {
+    console.log(event.currentTarget.dataset.src)
   }
 })

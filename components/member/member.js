@@ -26,6 +26,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onMemberTap(event){
+      console.log(event.currentTarget.dataset.src)
+    }
   }
 })

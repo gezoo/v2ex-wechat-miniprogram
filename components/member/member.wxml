@@ -2,7 +2,7 @@
 <view class='member'>
   <image class='member-avatar' src='{{source.avatar_normal}}'></image>
   <view class='member-username'>
-    <view class='member-name'>{{source.username}}</view>
+    <view class='member-name' data-src="{{'member/'+ source.username}}" bindtap='onMemberTap'>{{source.username}}</view>
     <view class='member-last_reply_by'>
       <slot></slot>
     </view>
