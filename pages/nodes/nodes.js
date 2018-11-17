@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    nodesData: []
+    nodesData: [],
+    hidden: false
   },
 
   /**
@@ -70,9 +71,9 @@ Page({
     wx.getStorage({
       key: 'nodes',
       success(res) {
-        console.log(res.data.length)
         that.setData({
-          nodesData: res.data
+          nodesData: res.data,
+          hidden: true
         })
       },
       fail() {
@@ -81,7 +82,8 @@ Page({
           url: app.config.nodesUrl,
           success(res) {
             that.setData({
-              nodesData: res.data
+              nodesData: res.data,
+              hidden: true
             })
             wx.setStorage({
               key: 'nodes',
@@ -89,8 +91,14 @@ Page({
             })
           }
         })
-      }
+      },
+      complete() {}
     })
-
+  },
+  onTap(event){
+    console.log(event)
+    wx.navigateTo({
+      url: '/pages/member_topics/member_topics?key=node_id&value=' + event.detail.id,
+    })
   }
 })

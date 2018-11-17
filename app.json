@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/latest/latest",
     "pages/topics/topics",
-    "pages/nodes/nodes"
+    "pages/nodes/nodes",
+    "pages/member_topics/member_topics"
   ],
   "window": {
     "backgroundTextStyle": "light",

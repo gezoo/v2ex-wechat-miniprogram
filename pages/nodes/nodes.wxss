@@ -1,1 +1,16 @@
 /* pages/nodes/nodes.wxss */
+
+.container {
+  padding: 25rpx;
+}
+
+.nodes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+tag {
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+}

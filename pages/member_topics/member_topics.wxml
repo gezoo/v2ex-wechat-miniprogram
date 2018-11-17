@@ -1,0 +1,4 @@
+<!--pages/member_topics/member_topics.wxml-->
+<view class="container">
+    <topics wx:for="{{topicsData}}" source="{{item}}" wx:key="{{item.id}}" bind:click="onTap"></topics>
+</view>

@@ -1,0 +1,17 @@
+/* pages/member_topics/member_topics.wxss */
+
+.container {
+  flex-direction: column;
+  background: #f0f2f4;
+}
+
+topics {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 8px;
+  background: #fff;
+}
+
+.item-hover {
+  background: #f0f2f4;
+}

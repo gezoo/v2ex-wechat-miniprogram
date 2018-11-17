@@ -1,6 +1,6 @@
 <!--components/node/node.wxml-->
 <wxs module="format" src="../../utils/formatter.wxs"></wxs>
-<view class='item' bindtap='onTap' hover-class='item-hover'>
+<view class='item' capture-bind:tap='onTap' hover-class='item-hover'>
   <member source="{{source.member}}">
    最后回复 {{source.last_reply_by}} · {{format.formatLastTouched(source.last_touched)}}
   </member>

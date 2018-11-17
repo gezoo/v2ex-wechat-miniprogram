@@ -10,8 +10,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    source:{
-      type:Object,
+    source: {
+      type: Object,
     },
   },
 
@@ -26,8 +26,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onMemberTap(event){
+    onMemberTap(event) {
       console.log(event.currentTarget.dataset.src)
+      wx.navigateTo({
+        url: '../../pages/member_topics/member_topics?key=username&value=' + event.currentTarget.dataset.src,
+      })
     }
   }
 })
