@@ -1,5 +1,5 @@
 <!--pages/latest/latest.wxml-->
 <view class="container">
-  <loading hidden="{{hidden}}"></loading>
+  <loading hidden="{{hidden}}">东京真热</loading>
   <node wx:for="{{latestData}}" source="{{item}}" wx:key="{{item.id}}"></node>
 </view>

@@ -12,15 +12,21 @@ Page({
     repliesData: [],
     now: '',
     pageSize: 10,
-    pageIndex: 1
+    pageIndex: 1,
+    hidden: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    const that = this;
     this.getData(options.id)
-    this.getRepliesData(options.id)
+    this.getRepliesData(options.id, ()=>{
+      that.setData({
+        hidden: true
+      })
+    })
     this.setData({
       now: app.util.formatTime(new Date())
     })
@@ -29,9 +35,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-    //wx.hideLoading()
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
@@ -80,7 +84,7 @@ Page({
       url: app.config.topicUrl + id,
       success(res) {
         const node = res.data[0];
-        if(node.content_rendered){
+        if (node.content_rendered) {
           wxParse.wxParse('topicContent', 'html', node.content_rendered, that, 10)
         }
         that.setData({
@@ -101,10 +105,16 @@ Page({
         that.setData({
           repliesData: res.data
         })
+      },
+      complete() {
+        if (callback) callback()
       }
     })
   },
   wxParseTagATap(event) {
     console.log(event.currentTarget.dataset.src)
+  },
+  onTagTap(event){
+    console.log(event)
   }
 })

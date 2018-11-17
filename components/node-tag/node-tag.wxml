@@ -1,2 +1,5 @@
 <!--components/node-tag/node-tag.wxml-->
-<view class='node-title'><slot></slot></view>
+<view class='node-title' bindtap='onTap'>
+  {{source.title}}
+  <slot></slot>
+</view>

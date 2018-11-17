@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/latest/latest",
-    "pages/topics/topics"
+    "pages/topics/topics",
+    "pages/nodes/nodes"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,6 +28,12 @@
         "text": "最新",
         "iconPath": "resources/images/all.png",
         "selectedIconPath": "resources/images/all_selected.png"
+      },
+      {
+        "pagePath": "pages/nodes/nodes",
+        "text": "节点",
+        "iconPath": "resources/images/nodes.png",
+        "selectedIconPath": "resources/images/nodes_selected.png"
       }
     ],
     "position": "bottom"

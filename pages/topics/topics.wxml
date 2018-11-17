@@ -1,9 +1,11 @@
 <!--pages/topics/topics.wxml-->
 <wxs module="format" src="../../utils/formatter.wxs"></wxs>
+<loading hidden="{{hidden}}">让网络飞一会</loading>
 <view class='container'>
   <member source="{{topicData.member}}">
     at {{format.formatLastTouched(topicData.last_modified)}}
   </member>
+  <tag class="node-tag" source="{{topicData.node}}" bind:tagTap="onTagTap"></tag>
   <view class='title'>{{topicData.title}}</view>
   <view class='{{topicData.content?"content":""}}'>
     <import src="../../utils/wxParse/wxParse.wxml" />

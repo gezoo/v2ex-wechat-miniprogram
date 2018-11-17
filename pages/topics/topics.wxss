@@ -32,3 +32,9 @@ member, .title, .content-footer, .topics-replies {
   font-size: 28rpx;
 }
 
+.node-tag{
+  position: absolute;
+  top: 25rpx;
+  right: 20rpx;
+}
+

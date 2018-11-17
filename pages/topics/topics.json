@@ -3,6 +3,7 @@
   "enablePullDownRefresh":false,
     "usingComponents": {
       "member": "/components/member/member",
-      "replies": "/components/replies/replies"
+      "replies": "/components/replies/replies",
+      "tag": "/components/node-tag/node-tag"
     }
 }

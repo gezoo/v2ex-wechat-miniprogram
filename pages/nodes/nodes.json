@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "节点",
+  "usingComponents": {
+    "tag": "/components/node-tag/node-tag"
+  }
+}
