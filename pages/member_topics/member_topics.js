@@ -15,6 +15,9 @@ Page({
    */
   onLoad: function (options) {
     this.getData(`&${options.key}=${options.value}`)
+    wx.setNavigationBarTitle({
+      title: options.title || options.key ,
+    })
   },
 
   /**

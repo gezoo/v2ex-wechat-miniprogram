@@ -1,4 +1,8 @@
 <!--pages/member_topics/member_topics.wxml-->
 <view class="container">
+  <view class='header'>
+  </view>
+  <view class='body'>
     <topics wx:for="{{topicsData}}" source="{{item}}" wx:key="{{item.id}}" bind:click="onTap"></topics>
+  </view>
 </view>

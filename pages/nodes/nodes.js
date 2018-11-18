@@ -8,7 +8,7 @@ Page({
    */
   data: {
     nodesData: [],
-    hidden: false
+    hidden: false,
   },
 
   /**
@@ -72,7 +72,7 @@ Page({
       key: 'nodes',
       success(res) {
         that.setData({
-          nodesData: res.data,
+          nodesData: res.data.filter(item => item.parent_node_name == '' || item.parent_node_name == null),
           hidden: true
         })
       },
@@ -81,13 +81,14 @@ Page({
         wx.request({
           url: app.config.nodesUrl,
           success(res) {
+            const items = res.data.filter(item => item.parent_node_name == '' || item.parent_node_name == null )
             that.setData({
-              nodesData: res.data,
+              nodesData: items,
               hidden: true
             })
             wx.setStorage({
               key: 'nodes',
-              data: res.data
+              data: items
             })
           }
         })
@@ -98,7 +99,7 @@ Page({
   onTap(event){
     console.log(event)
     wx.navigateTo({
-      url: '/pages/member_topics/member_topics?key=node_id&value=' + event.detail.id,
+      url: `/pages/member_topics/member_topics?key=node_id&value=${event.detail.id}&title=${event.detail.title}`  ,
     })
   }
 })
