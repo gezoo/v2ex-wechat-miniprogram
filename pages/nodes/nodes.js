@@ -1,6 +1,7 @@
 // pages/nodes/nodes.js
-
+const xmldoc = require('../../utils/v2exHtmlParse.js')
 const app = getApp();
+
 Page({
 
   /**
@@ -72,34 +73,37 @@ Page({
       key: 'nodes',
       success(res) {
         that.setData({
-          nodesData: res.data.filter(item => item.parent_node_name == '' || item.parent_node_name == null),
+          nodesData: res.data,
           hidden: true
         })
       },
       fail() {
-        console.log("fail")
         wx.request({
-          url: app.config.nodesUrl,
+          url: app.config.nodesHtmlUrl,
           success(res) {
-            const items = res.data.filter(item => item.parent_node_name == '' || item.parent_node_name == null )
+            const data = xmldoc.parser(res.data)
             that.setData({
-              nodesData: items,
+              nodesData: data,
               hidden: true
             })
             wx.setStorage({
               key: 'nodes',
-              data: items
+              data: data,
+            })
+          },
+          fail() {
+            that.setData({
+              hidden: true
             })
           }
         })
       },
-      complete() {}
     })
   },
-  onTap(event){
+  onTap(event) {
     console.log(event)
     wx.navigateTo({
-      url: `/pages/member_topics/member_topics?key=node_id&value=${event.detail.id}&title=${event.detail.title}`  ,
+      url: `/pages/member_topics/member_topics?key=node_id&value=${event.detail.id}&title=${event.detail.title}`,
     })
   }
 })

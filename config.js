@@ -7,6 +7,7 @@ const config = {
   nodeTopicsUrl: `${host}/api/topics/show.json?node_id=`,
   topicUrl: `${host}/api/topics/show.json?id=`,
   repliesUrl: `${host}/api/replies/show.json?topic_id=`,
+  nodesHtmlUrl: `${host}/?tab=members`
 }
 
 module.exports = config
