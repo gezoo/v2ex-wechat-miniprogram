@@ -22,7 +22,7 @@ Page({
   onLoad: function(options) {
     const that = this;
     this.getData(options.id)
-    this.getRepliesData(options.id, ()=>{
+    this.getRepliesData(options.id, () => {
       that.setData({
         hidden: true
       })
@@ -40,8 +40,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-  },
+  onShow: function() {},
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -113,8 +112,16 @@ Page({
   },
   wxParseTagATap(event) {
     console.log(event.currentTarget.dataset.src)
+    const url = event.currentTarget.dataset.src;
+    if (url.indexOf('http') != -1) {
+      wx.setClipboardData({
+        data: event.currentTarget.dataset.src
+      })
+
+    }
+
   },
-  onTagTap(event){
+  onTagTap(event) {
     console.log(event)
   }
 })

@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<loading hidden="{{hidden}}">飞往月球</loading>
 <view class="container">
     <topics wx:for="{{hotData}}" source="{{item}}" wx:key="{{item.id}}" bind:click="onTap"></topics>
 </view>

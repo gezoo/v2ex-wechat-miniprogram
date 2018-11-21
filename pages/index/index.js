@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     hotData: [],
+    hidden:false
   },
 
   onLoad: function() {
@@ -27,7 +28,8 @@ Page({
       url: app.config.hotUrl,
       success(res) {
         that.setData({
-          hotData: res.data
+          hotData: res.data,
+          hidden: true
         })
       },
       complete() {

@@ -1,7 +1,9 @@
 <!--pages/nodes/nodes.wxml-->
 <loading hidden="{{hidden}}">FBI warning</loading>
 <view class='container'>
-  <view class='nodes'>
-    <tag wx:for="{{nodesData}}" source="{{item}}" bind:tagTap="onTap"></tag>
+  <view class='parent-node' wx:for="{{nodesData}}">
+    <view class='parent-node-title'>{{item.title}}</view>
+    <view class='nodes'>
+    <tag wx:for="{{item.nodes}}" wx:for-item="nodeItem" source="{{nodeItem}}" bind:tagTap="onTap"></tag></view>
   </view>
 </view>

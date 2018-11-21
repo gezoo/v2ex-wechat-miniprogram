@@ -31,6 +31,13 @@ Component({
   methods: {
     wxParseTagATap(event){
       console.log(event.currentTarget.dataset.src)
+      const url = event.currentTarget.dataset.src;
+      if (url.indexOf('http') != -1) {
+        wx.setClipboardData({
+          data: event.currentTarget.dataset.src
+        })
+
+      }
     }
   }
 })

@@ -5,7 +5,7 @@
    最后回复 {{source.last_reply_by}} · {{format.formatLastTouched(source.last_touched)}}
   </member>
   <view class='content'>
-    {{source.title}}
+    <text>{{source.title}}</text>
   </view>
   <view class='node'>
     <node-tag>{{source.node.title}}</node-tag>

@@ -1,6 +1,6 @@
 <!--pages/topics/topics.wxml-->
 <wxs module="format" src="../../utils/formatter.wxs"></wxs>
-<loading hidden="{{hidden}}">让网络飞一会</loading>
+<loading hidden="{{hidden}}">知男而上</loading>
 <view class='container'>
   <member source="{{topicData.member}}">
     at {{format.formatLastTouched(topicData.last_modified)}}

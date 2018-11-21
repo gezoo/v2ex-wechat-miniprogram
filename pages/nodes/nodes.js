@@ -1,5 +1,5 @@
 // pages/nodes/nodes.js
-const xmldoc = require('../../utils/v2exHtmlParse.js')
+const jsonData = require('../../resources/nodes.js')
 const app = getApp();
 
 Page({
@@ -69,41 +69,15 @@ Page({
   },
   getData() {
     const that = this
-    wx.getStorage({
-      key: 'nodes',
-      success(res) {
-        that.setData({
-          nodesData: res.data,
-          hidden: true
-        })
-      },
-      fail() {
-        wx.request({
-          url: app.config.nodesHtmlUrl,
-          success(res) {
-            const data = xmldoc.parser(res.data)
-            that.setData({
-              nodesData: data,
-              hidden: true
-            })
-            wx.setStorage({
-              key: 'nodes',
-              data: data,
-            })
-          },
-          fail() {
-            that.setData({
-              hidden: true
-            })
-          }
-        })
-      },
+    this.setData({
+      nodesData: jsonData.data,
+      hidden: true
     })
   },
   onTap(event) {
     console.log(event)
     wx.navigateTo({
-      url: `/pages/member_topics/member_topics?key=node_id&value=${event.detail.id}&title=${event.detail.title}`,
+      url: `/pages/member_topics/member_topics?key=node_name&value=${event.detail.name}&title=${event.detail.title}`,
     })
   }
 })
