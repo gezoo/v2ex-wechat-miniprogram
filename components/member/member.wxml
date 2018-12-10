@@ -1,6 +1,6 @@
 <!--components/member/member.wxml-->
 <view class='member'>
-  <image class='member-avatar' src='{{source.avatar_normal}}' data-src="{{source.username}}" bindtap='onMemberTap'></image>
+  <image class='member-avatar' src='{{"https:"+source.avatar_normal}}' data-src="{{source.username}}" bindtap='onMemberTap'></image>
   <view class='member-username'>
     <view class='member-name' data-src="{{source.username}}" bindtap='onMemberTap'>{{source.username}}</view>
     <view class='member-last_reply_by'>
